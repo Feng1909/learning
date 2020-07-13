@@ -1,0 +1,123 @@
+{
+  "dns" : {
+    "servers" : [
+      "127.0.0.1"
+    ]
+  },
+  "inbounds" : [
+    {
+      "listen" : "0.0.0.0",
+      "port" : 1081,
+      "protocol" : "socks",
+      "tag" : "socksinbound",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true,
+        "ip" : "127.0.0.1"
+      }
+    },
+    {
+      "listen" : "0.0.0.0",
+      "port" : 8001,
+      "protocol" : "http",
+      "tag" : "httpinbound",
+      "settings" : {
+        "timeout" : 0
+      }
+    }
+  ],
+  "outbounds" : [
+    {
+      "sendThrough" : "0.0.0.0",
+      "mux" : {
+        "enabled" : false,
+        "concurrency" : 8
+      },
+      "protocol" : "vmess",
+      "settings" : {
+        "vnext" : [
+          {
+            "address" : "96.45.177.77",
+            "users" : [
+              {
+                "id" : "3826d958-9115-46d5-bd84-18c1f3045632",
+                "alterId" : 64,
+                "security" : "auto",
+                "level" : 0
+              }
+            ],
+            "port" : 34920
+          }
+        ]
+      },
+      "tag" : "banwagong",
+      "streamSettings" : {
+        "sockopt" : {
+
+        },
+        "quicSettings" : {
+          "key" : "",
+          "header" : {
+            "type" : "none"
+          },
+          "security" : "none"
+        },
+        "tlsSettings" : {
+          "allowInsecure" : false,
+          "alpn" : [
+            "http\/1.1"
+          ],
+          "serverName" : "server.cc",
+          "allowInsecureCiphers" : false
+        },
+        "wsSettings" : {
+          "path" : "",
+          "headers" : {
+
+          }
+        },
+        "httpSettings" : {
+          "path" : "",
+          "host" : [
+            ""
+          ]
+        },
+        "tcpSettings" : {
+          "header" : {
+            "type" : "none"
+          }
+        },
+        "kcpSettings" : {
+          "header" : {
+            "type" : "none"
+          },
+          "mtu" : 1350,
+          "congestion" : false,
+          "tti" : 20,
+          "uplinkCapacity" : 5,
+          "writeBufferSize" : 1,
+          "readBufferSize" : 1,
+          "downlinkCapacity" : 20
+        },
+        "security" : "none",
+        "network" : "tcp"
+      }
+    }
+  ],
+  "routing" : {
+    "name" : "all_to_main",
+    "domainStrategy" : "AsIs",
+    "rules" : [
+      {
+        "type" : "field",
+        "outboundTag" : "banwagong",
+        "port" : "0-65535"
+      }
+    ]
+  },
+  "log" : {
+    "error" : "\/var\/folders\/0d\/rr3yv23d6917xb39k3xzyynm0000gn\/T\/cenmrev.v2rayx.log\/error.log",
+    "loglevel" : "none",
+    "access" : "\/var\/folders\/0d\/rr3yv23d6917xb39k3xzyynm0000gn\/T\/cenmrev.v2rayx.log\/access.log"
+  }
+}
