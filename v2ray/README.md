@@ -1,8 +1,22 @@
 # V2ray安装教程
 
-### 在终端运行 
+## 在线安装
+
+### 1.在终端运行 
 
 - #### *curl-Ohttps://install.direct/go.sh*
+
+### 2.安装v2ray:
+
+- #### *sudo bash go.sh*
+
+## 离线安装
+
+### 1.把go.sh与v2ray-linux-64.zip防止同一个文件夹，在终端下执行：
+
+- #### *sudo bash go.sh --local ./v2ray-linux-64.zip*
+
+## 后续步骤
 
 ### 完成后将下载的config.json文件移动到/etc/v2ray/config.json中
 
@@ -11,6 +25,10 @@
 ### 启动v2ray:
 
 - #### *service v2ray start*
+
+### 停止v2ray:
+
+- #### *service v2ray stop*
 
 ### 在home目录下打开.bashrc文件，在最下面天际代理地址和端口：
 
