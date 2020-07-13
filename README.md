@@ -14,11 +14,11 @@
 
 ### 在home目录下打开.bashrc文件，在最下面天际代理地址和端口：
 
-- ### *export http_proxy=127.0.0.1:8001*
+- #### *export http_proxy=127.0.0.1:8001*
 
-- ### *export https_proxy=127.0.0.1:8001*
+- #### *export https_proxy=127.0.0.1:8001*
 
-- ### *exportsocket_proxy=127.0.0.1:1081*
+- #### *exportsocket_proxy=127.0.0.1:1081*
 
 ## 在浏览器中，也需要配置代理，有时候在系统设置中也需要配置
 
