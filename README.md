@@ -3,3 +3,6 @@
 ## So far, I have the imformation of the following:
 
 - ### *V2ray*
+
+* ### *Lantern*
+
