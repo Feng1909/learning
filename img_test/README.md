@@ -1,1 +1,1 @@
-![img](https://github.com/Feng1909/learning/img_test/img/test.jpg)
+![img](https://github.com/Feng1909/learning/blob/master/img_test/img/test.jpg)
